@@ -1,6 +1,9 @@
-x=load('testdata1.txt');
+x=load('traindata1.txt');
 n=size(x,2)-1;
 x1=x(:,1:n);
-y=x(:,11);
+y=x(:,end);
 inverse=pinv(x1'*x1);
-theta=inverse*x1'*y
+theta=inverse*x1'*y;
+output=load('testdata.txt');
+o=output(:,1:end);
+predicted=o*theta;
